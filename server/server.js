@@ -17,13 +17,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //parser application/json
 app.use(bodyParser.json());
 
-app.use(require('./routes/usuario.routes'));
+
+//configuracion global de rutas
+app.use(require('./routes/index'));
 
 mongoose.connect(process.env.URLDB, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology: true }, (err, res) => {
+    useUnifiedTopology: true
+}, (err, res) => {
     if (err) throw err;
 
     console.log('Base de datos ONLINE');
