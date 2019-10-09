@@ -14,5 +14,9 @@ app.use(require('./categorias.routes'));
 
 app.use(require('./producto.routes'));
 
+app.use(require('./upload.routes'));
+
+app.use(require('./imagenes.routes'));
+
 
 module.exports = app;
